@@ -74,7 +74,7 @@ class Quiz {
     let quizEndHTML = 
     `
     <h1>Quiz Completed</h1>
-    <h2 id="score">You scored: ${quiz.score} of ${quiz.question.length}</h2>
+    <h2 id="score">You scored: ${quiz.score} of ${quiz.questions.length}</h2>
     <div class="quiz-repeat">
         <a href="index.html">Take Quiz Again</a>
     </div>
@@ -92,7 +92,7 @@ class Quiz {
     ),
     new Question(
         "Cascading style sheet stands for?",
-        ['XML',' CSS','JQuery','HTML'],
+        ['XML','CSS','JQuery','HTML'],
         'CSS'
     )
  ]
@@ -101,3 +101,25 @@ class Quiz {
 
  // display question
  displayQuestion();
+
+ // add a countdown
+ let time = 1;
+ let quizTimeInMinutes = time * 60 * 60;
+ let quizTime =  quizTimeInMinutes / 60;
+ let counting = document.getElementById("count-down");
+
+ const startCountdown = () => {
+    let quizTimer = setInterval(() => {
+        if (quizTime <= 0) {
+            clearInterval(quizTimer);
+            showScores();
+        } else {
+            quizTime--;
+            let sec = Math.floor(quizTime % 60);
+            let min = Math.floor(quizTime / 60) % 60;
+            counting.innerHTML = `Time: ${min}min ${sec}min`;
+        }
+    }, 1000);
+ }
+
+ startCountdown();
