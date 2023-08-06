@@ -1,3 +1,14 @@
+class Question {
+    constructor(text, choices, answer) {
+        this.text = text;
+        this.choices = choices;
+        this.answer = answer;
+    }
+    isCorrectAnswer(choice) {
+        return this.answer === choice;
+    }
+ }
+
 class Quiz {
     constructor(questions) {
         this.score = 0;
@@ -5,7 +16,6 @@ class Quiz {
         this.questionIndex = 0;
     }
     getQuestionIndex() {
-
         return this.questions[this.questionIndex];
     }
 
@@ -21,16 +31,6 @@ class Quiz {
     }
  }
 
- class Question {
-    constructor(text, choices, answer) {
-        this.text = text;
-        this.choices = choices;
-        this.answer = answer;
-    }
-    isCorrectAnswer(choice) {
-        return this.answer === choice;
-    }
- }
 
  // Display question
  const displayQuestion = () => {
