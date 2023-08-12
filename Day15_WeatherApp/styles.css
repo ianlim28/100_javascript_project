@@ -111,6 +111,7 @@ body {
 
 .container {
   width: 80%;
+  max-width: 900px;
   margin: 0 auto;
   max-width: 900px;
   padding: 0 20px;
@@ -123,12 +124,6 @@ p {
 
 img {
   width: 100%;
-}
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 .top .error {
