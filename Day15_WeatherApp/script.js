@@ -1,33 +1,45 @@
 const api = {
-    key: '2b7a85fd68e4df0c1717dcf33693c087',
-    base: 'https://api.openweathermap.org/geo/1.0/'
+    key: '',
+    baseLonLat: 'https://api.openweathermap.org/geo/1.0/'
 }
+
+// The https://openweathermap.org/api doesnt have a free version of API other than long lat, therefore i wont go ahead
 
 const search = document.querySelector('.search');
 const btn = document.querySelector('.btn');
 
-// const displayData = () => {
-//     console.log()
-// }
 
-const getData = async () => {
+const getLonLat = async () => {
 
-    const response = await fetch(`${api.base}direct?q=${search.value}&limit=5&appid=${api.key}`);
+    const response = await fetch(`${api.baseLonLat}direct?q=${search.value}&limit=5&appid=${api.key}`);
     if(response.status !==200) {
-        throw new Error('cannot fetch the data');
+        throw new Error('cannot fetch Lon Lat');
     }
     const data = await response.json();
     const firstLocation = data[0];
     const { lon, lat } = firstLocation;
+    console.log(lon, lat)
     return {lon, lat};
+}
+
+const getData = async (lat, lon) => {
+    const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${api.key}`);
+    console.log(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${api.key}`);
+    if(response.status !==200){
+        throw new Error('cannot fetch weather data')
+    }
+    const data = await response.json()
+    return data;
 }
 
 const getInput = async (e) => {
     e.preventDefault();
     if (e.type == "click") {
         try {
-            const { lon, lat } = await getData(search.value);
-            console.log(lon, lat);
+            const { lon, lat } = await getLonLat(search.value);
+            const result = await getData(lat, lon);
+            console.log(result);
+            // console.log(lon, lat);
         } catch (error) {
             console.error(error);
         }
