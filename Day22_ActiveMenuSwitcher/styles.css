@@ -81,7 +81,7 @@ nav {
   margin: 0 1.5rem;
 }
 
-li a {
+.nav-list li a {
   color: white;
   font-size: 1.6rem;
   text-decoration: none;
@@ -121,22 +121,4 @@ h2 {
 
 .flex > * {
   margin: 3px;
-}
-
-.active {
-  position: relative;
-}
-
-.active > * {
-  color: var(--color-sec);
-}
-
-.active::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: -5px;
-  height: 2px;
-  width: 100%;
-  background-color: white;
 }
