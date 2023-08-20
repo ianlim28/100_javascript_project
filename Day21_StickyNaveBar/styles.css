@@ -43,18 +43,20 @@ img {
 
 header {
   width: 100%;
-  background-color: var(--dark-grey);
+  /* background-color: var(--dark-grey); */
   position: fixed;
   top: 0;
   left: 0;
+  padding: 2rem 0;
+  z-index: 111;
+  transition: all .5s;
+}
+
+header.sticky {
+  background-color: white;
+  border-bottom: 1px solid #777;
   padding: 1rem 0;
-  margin-bottom: 5rem;
 }
-
-section {
-  padding: 5rem 0;
-}
-
 
 nav {
   /* height: 7.5rem; */
@@ -79,10 +81,26 @@ nav {
   margin: 0 1.5rem;
 }
 
-li a {
+.nav-list li a {
   color: white;
   font-size: 1.6rem;
   text-decoration: none;
+}
+
+header.sticky li a {
+  color: var(--dark-grey);
+}
+
+/* New Section CSS */
+section.header {
+  width: 100%;
+  height: 90vh;
+  background: url(images/bg-girl.jpg) center no-repeat;
+  background-size: cover;
+}
+
+section {
+  padding: 5rem 0;
 }
 
 .box {
@@ -103,22 +121,4 @@ h2 {
 
 .flex > * {
   margin: 3px;
-}
-
-.active {
-  position: relative;
-}
-
-.active > * {
-  color: var(--color-sec);
-}
-
-.active::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: -5px;
-  height: 2px;
-  width: 100%;
-  background-color: white;
 }
