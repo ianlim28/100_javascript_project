@@ -35,19 +35,22 @@ scrollBtn.addEventListener("click", scrollToTop);
 
 // responsive mobile menu
 const menu = document.querySelector(".nav-list");
+const menuWrapper = document.querySelector(".nav-wrapper");
 const hamburger = document.querySelector(".hamburger");
 const close = document.querySelector(".close");
 
 const showMenu = () => {
     hamburger.style.display = "none";
     close.style.transform = "translateY(0)";
-    menu.style.transform = "translateY(0)";
+    menuWrapper.style.transform = "translateX(0)";
+    menu.style.transform = "translateX(0)";
 }
 
 const hideMenu = () => {
     close.style.transform = "translateY(-20rem)";
     hamburger.style.display = "block";
-    menu.style.transform = "translateY(-200%)";
+    menuWrapper.style.transform = "translateX(-200%)";
+    menu.style.transform = "translateX(-200%)";
 }
 
 navList.addEventListener("click", (e) => {
@@ -62,3 +65,4 @@ navList.addEventListener("click", (e) => {
 
 hamburger.addEventListener("click", showMenu);
 close.addEventListener("click", hideMenu);
+menuWrapper.addEventListener("click", hideMenu);
