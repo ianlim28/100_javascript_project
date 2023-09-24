@@ -7,8 +7,8 @@
   --light-blue: #005490;
   --color-primary: #9d0191;
   --color-sec: #db6400;
-  --grey: #eee;
-  --dark-grey: #222831;
+  --color-grey: #eee;
+  --color-dark-grey: #222831;
 }
 
 * {
@@ -38,4 +38,32 @@ img {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Start Here */
+body {
+  background: var(--color-grey);
+}
+
+.box {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-item {
+  position: relative;
+  margin: 5px 0;
+}
+.form-item > * {
+  padding: 8px;
+}
+
+.fas {
+  position: absolute;
+  right: 1.1rem;
+  top: 5px;
+  cursor: pointer;
 }
