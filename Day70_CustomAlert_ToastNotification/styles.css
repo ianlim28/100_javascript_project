@@ -61,6 +61,7 @@ img {
   margin: 1rem 0;
   background-color: orangered;
   color: var(--white);
+  cursor: pointer;
 }
 
 .btn-warning {
@@ -77,7 +78,7 @@ img {
   border-radius: 5px;
   border-left: 8px solid transparent;
   border-color: #d1281f;
-  /* transform: translateX(110%); */
+  transform: translateX(110%);
 }
 
 .alert.show {
