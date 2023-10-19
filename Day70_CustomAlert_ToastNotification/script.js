@@ -3,7 +3,7 @@ const alertBox = document.querySelector(".alert");
 const exclamationIcon = document.querySelector(".fa-exclamation-circle");
 const msg = document.querySelector(".msg");
 const closeBtn = document.querySelector(".close-btn");
-const closeIcon = document.querySelector(".fa-time");
+const closeIcon = document.querySelector(".fa-times");
 
 class ShowAlert {
     constructor(state, borderColor, color) {
@@ -40,5 +40,7 @@ const danger = new ShowAlert("#f8d7da", "#d1281f", "#721c24");
 main.addEventListener("click", (e) => {
     if (e.target.classList.contains("btn-danger")) {
         danger.trigger("Stranger Danger");
+    } else if (e.target.classList.contains("btn-warning")) {
+        warning.trigger("Warning Alert");
     }
 })
