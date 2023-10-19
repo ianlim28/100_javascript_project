@@ -7,8 +7,8 @@
   --light-blue: #005490;
   --color-primary: #9d0191;
   --color-sec: #db6400;
-  --color-grey: #eee;
-  --color-dark-grey: #222831;
+  --grey: #eee;
+  --dark-grey: #222831;
 }
 
 * {
@@ -59,7 +59,7 @@ img {
   border: none;
   outline: none;
   margin: 1rem 0;
-  background: orangered;
+  background-color: orangered;
   color: var(--white);
   cursor: pointer;
 }
@@ -86,18 +86,10 @@ img {
 }
 
 @keyframes slide-in {
-  0% {
-    transform: translateX(100%);
-  }
-  40% {
-    transform: translateX(-10%);
-  }
-  80% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-1rem);
-  }
+  0% { transform: translateX(100%); }
+  40% { transform: translateX(-10%); }
+  80% { transform: translateX(0%); }
+  100% { transform: translateX(-1rem); }
 }
 
 .alert.hide {
@@ -105,18 +97,10 @@ img {
 }
 
 @keyframes slide-out {
-  0% {
-    transform: translateX(-1rem);
-  }
-  40% {
-    transform: translateX(0%);
-  }
-  80% {
-    transform: translateX(-10%);
-  }
-  100% {
-    transform: translateX(110%);
-  }
+  0% { transform: translateX(-1rem); }
+  40% { transform: translateX(0%); }
+  80% { transform: translateX(-10%); }
+  100% { transform: translateX(110%); }
 }
 
 .fa-exclamation-circle {
@@ -139,7 +123,7 @@ img {
   right: 0;
   top: 0;
   height: 100%;
-  background: transparent;
+  background-color: transparent;
   padding: 2rem 1.8rem;
   cursor: pointer;
 }
@@ -151,20 +135,4 @@ img {
 .close-btn .fas {
   color: #721c24;
   font-size: 2rem;
-}
-
-/* Adding Proress bar css */
-.progress-bar {
-  width: 100%;
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.progress {
-  width: 0%;
-  height: 3px;
-  line-height: 3px;
-  background-color: var(--color-primary);
 }
